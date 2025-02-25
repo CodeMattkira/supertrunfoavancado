@@ -2,20 +2,7 @@
 
 int main(){
     
-     int opcao;
-
-    printf("***** SUPER TRUNFO *******\n");
-    printf("Escolha uma opção: \n");
-    printf("1. Iniciar.\n");
-    printf("2. Regras do Jogo.\n");
-    printf("3. Sair do jogo.\n");
-    printf("Opção: ");
-    scanf("%d", &opcao);
-    
-    switch (opcao)
-    {
-    case 1:
-         // CRIAÇÃO DAS VARIÁVEIS QUE VÃO RECEBER AS INFORMAÇÕES DAS CARTAS.
+      // CRIAÇÃO DAS VARIÁVEIS QUE VÃO RECEBER AS INFORMAÇÕES DAS CARTAS.
         
          //VARIÁVEIS PRIMEIRA CARTA.
          char estado1[30];
@@ -40,20 +27,46 @@ int main(){
         int densidadedemografica2;
         float pibpercapita2; 
         long long int superpoder2;
+      
+      // CRIAÇÃO DOS CÓDIGOS PARA CALCULAR A DENSIDADE POPULACIONAL, O PIB PER CAPITA E O SUPER PODER AUTOMATICAMENTE.
+
+      pibpercapita1 = (float)pib1 / populacao1;
+      densidadedemografica1 = populacao1 / areakm1;   // REFERENTE PRIMEIRA CARTA.
+
+      pibpercapita2 = (float)pib2 / populacao2;
+      densidadedemografica2 = populacao2 / areakm2; // REFERENTE A SEGUNDA CARTA.
+
+      superpoder1 = (int)populacao1 + areakm1 + pib1 + numturisticos1 + densidadedemografica1 + pibpercapita1; // REFERENTE PRIMEIRA CARTA
+
+      superpoder2 = (int)populacao2 + areakm2 + pib2 + numturisticos2 + densidadedemografica2 + pibpercapita2; // REFERENTE SEGUNDA CARTA
+
+    printf("***** SUPER TRUNFO *******\n");
+    printf("Escolha uma opção: \n");
+    printf("1. Iniciar.\n");
+    printf("2. Regras do Jogo.\n");
+    printf("3. Sair do jogo.\n");
+    printf("Opção: ");
+    int opcao;
+    scanf("%d", &opcao);
     
+    
+    switch (opcao)
+    {
+    case 1:
+
         // CRIAÇÃO DA ENTRADA DE DADOS (INFORMAÇÕES) DAS CARTAS.
         
         // PRIMEIRA CARTA.
          printf("Olá, seja bem vindo a criação das cartas do jogo. A seguir será solicitado informações que serão adicionadas a cada carta do jogo. Vamos começar! \n");
     
          printf("Primeiro, digite o estado: ");
-         scanf("%c", estado1);
+         scanf("%s", estado1);
 
          printf("Agora digite o código da carta: ");
-         scanf("%c", codigocarta1);
+         scanf("%s", codigocarta1);
 
          printf("Agora digite o nome da cidade: ");
-         scanf("%c", nomecidade1);
+         scanf("%s", nomecidade1);
  
          printf("Agora digite a população: ");
          scanf("%d", &populacao1);
@@ -72,13 +85,13 @@ int main(){
          printf("Agora vamos cadastrar a segunda carta!\n");
     
          printf("Primeiro, digite o estado: ");
-         scanf("%c", estado2);
+         scanf("%s", estado2);
 
          printf("Agora digite o código da carta: ");
-         scanf("%c", codigocarta2);
+         scanf("%s", codigocarta2);
 
          printf("Agora digite o nome da cidade: ");
-         scanf("%c", nomecidade2);
+         scanf("%s", nomecidade2);
 
          printf("Agora digite a população: ");
          scanf("%d", &populacao2);
@@ -91,18 +104,6 @@ int main(){
 
          printf("Agora digite o número de pontos turísticos: ");
          scanf("%d", &numturisticos2);
-
-         // CRIAÇÃO DOS CÓDIGOS PARA CALCULAR A DENSIDADE POPULACIONAL, O PIB PER CAPITA E O SUPER PODER AUTOMATICAMENTE.
-
-         pibpercapita1 = (float)pib1 / populacao1;
-         densidadedemografica1 = populacao1 / areakm1;   // REFERENTE PRIMEIRA CARTA.
-
-         pibpercapita2 = (float)pib2 / populacao2;
-         densidadedemografica2 = populacao2 / areakm2; // REFERENTE A SEGUNDA CARTA.
-
-         superpoder1 = (int)populacao1 + areakm1 + pib1 + numturisticos1 + densidadedemografica1 + pibpercapita1; // REFERENTE PRIMEIRA CARTA
-   
-         superpoder2 = (int)populacao2 + areakm2 + pib2 + numturisticos2 + densidadedemografica2 + pibpercapita2; // REFERENTE SEGUNDA CARTA
 
          // IMPRIMINDO NA TELA OS DADOS DA PRIMEIRA CARTA CADASTRADA.
     
